@@ -9,13 +9,18 @@
 
 # import des librairies
 import tkinter as tk
+from random import randint
+
 
 
 # définition des constantes (écrites en majuscule)
 
 
 # définition des variables globales
-
+grille = [[0,0,0],[0,0,0],[0,0,0]]
+for i in range (len(grille)):
+    for j in range (len(grille)):
+        grille[i][j] = randint(0,9)
 
 # définition des fonctions (chaque fonction devra contenir une docstring)
 
