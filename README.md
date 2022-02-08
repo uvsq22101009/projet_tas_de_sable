@@ -7,5 +7,5 @@ S2 - MIASHS TD2 - IN200 : projet sur la simulation de l’écoulement d’un tas
 # Prenom NOM
 # Prenom NOM
 # Prenom NOM
-# https://github.com/uvsq-info/l1-python
+# https://github.com/uvsq22101009/projet_tas_de_sable/blob/main/README.md
 #########################################
