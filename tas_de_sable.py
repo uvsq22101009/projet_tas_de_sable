@@ -8,3 +8,10 @@
 ######################################### 
 
 import tkinter as tk
+
+# informations liées au groupe
+# import des librairies
+# définition des constantes (écrites en majuscule)
+# définition des variables globales
+# définition des fonctions (chaque fonction devra contenir une docstring)
+# programme principal contenant la définition des widgets et des événements qui leur sont liés et l’appel à la boucle de gestion des événements
