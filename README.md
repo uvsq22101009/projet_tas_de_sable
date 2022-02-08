@@ -2,7 +2,7 @@
 S2 - MIASHS TD2 - IN200 : projet sur la simulation de l’écoulement d’un tas de sable
 
 #########################################
-# groupe MIASHS TD2 groupe 5
+# groupe n°5 - MIASHS TD2
 # Gabriel PHILIPPE
 # Aya Saghraoui
 # Wanis Chouaib
