@@ -126,7 +126,7 @@ racine = tk.Tk()
 racine.title('tas de sable')
 
                     
-Configuration = tk.Button(text="Configuration", 
+Configuration = tk.Button(text="Configuration aléatoire", 
                     height=1, width=15,
                     font=("Helvetica", "10"),
                     command=create_grille
