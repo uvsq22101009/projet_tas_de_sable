@@ -25,12 +25,13 @@ def create_grille():
 
     Returns
     -------
-    None
+    list
     """
     global grille
     for i in range (len(grille)):
         for j in range (len(grille)):
             grille[i][j] = randint(0,7)
+    print(grille)
 
 def empty_grille():
     """
@@ -128,7 +129,7 @@ racine.title('tas de sable')
 Configuration = tk.Button(text="Configuration", 
                     height=1, width=15,
                     font=("Helvetica", "10"),
-                    command=create_grille()
+                    command=create_grille
                   )
 Configuration.grid(row=0, column=1, padx=200)
 
