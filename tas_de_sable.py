@@ -63,9 +63,9 @@ def instable(x, y):
         return True
     return False
 
-def add_up(x, y):
+def add(x, y):
     """
-    Ajoute un grain de sable sur la case voisine du dessus.
+    Ajoute un grain de sable sur les cases voisines de x, y.
 
     Parameters
     ----------
@@ -80,60 +80,8 @@ def add_up(x, y):
     """
     global grille
     grille[x-1][y]+=1
-    
-
-def add_down(x, y):
-    """
-    Ajoute un grain de sable sur la case voisine du dessous.
-
-    Parameters
-    ----------
-    x : int
-        ligne
-    y : int
-        colonne
-
-    Returns
-    -------
-    None
-    """
-    global grille
     grille[x+1][y]+=1
-
-def add_left(x, y):
-    """
-    Ajoute un grain de sable sur la case voisine de gauche.
-
-    Parameters
-    ----------
-    x : int
-        ligne
-    y : int
-        colonne
-
-    Returns
-    -------
-    None
-    """
-    global grille
     grille[x][y-1]+=1
-
-def add_right(x, y):
-    """
-    Ajoute un grain de sable sur la case voisine de droite.
-
-    Parameters
-    ----------
-    x : int
-        ligne
-    y : int
-        colonne
-
-    Returns
-    -------
-    None
-    """
-    global grille
     grille[x][y+1]+=1
 
 def avalanche(x, y):
@@ -152,14 +100,12 @@ def avalanche(x, y):
     None
     """
     global grille
-    add_up(x, y, grille)
-    add_down(x, y, grille)
-    add_left(x, y, grille)
-    add_right(x, y, grille)
+    add(x, y, grille)
+    grille[x][y]-=4
 
 
 # programme principal contenant la définition des widgets et des événements qui leur sont liés et l’appel à la boucle de gestion des événements
-racine = tk.Tk() # Création de la fenêtre racine
+racine = tk.Tk() 
 racine.title('tas de sable')
 
                     
@@ -176,5 +122,5 @@ canvas = tk.Canvas(racine, bg="black",
                    height=500, width=500)
 canvas.grid(row=1, column=1)
 
-racine.mainloop() # Lancement de la boucle principale
+racine.mainloop() 
 
