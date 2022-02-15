@@ -11,8 +11,6 @@
 import tkinter as tk
 from random import randint
 
-
-
 # définition des constantes (écrites en majuscule)
 
 
@@ -23,21 +21,31 @@ grille = [[0,0,0],[0,0,0],[0,0,0]]
 # définition des fonctions (chaque fonction devra contenir une docstring)
 def create_grille():
     """
-    Permet de remplir la grille de manière aléatoire.
+    Crée une grille aléatoire.
 
     Returns
     -------
     None
     """
+    global grille
     for i in range (len(grille)):
         for j in range (len(grille)):
-            grille[i][j] = randint(0,9)
-    
-def instable(x, y, tab):
+            grille[i][j] = randint(0,7)
+
+def empty_grille():
     """
-    Permet de dire si la case de coordonnées x,y est instable.
-    Inutile de faire une fontion stable car si la case n'est pas instable
-    alors elle est stable obligatoirement.
+    Crée une grille vide.
+
+    Returns
+    -------
+    None
+    """
+    global grille
+    grille = [[0,0,0],[0,0,0],[0,0,0]]
+    
+def instable(x, y):
+    """
+    Regarde si la case x, y est instable ou non.
 
     Parameters
     ----------
@@ -45,18 +53,17 @@ def instable(x, y, tab):
         ligne
     y : int
         colonne
-    tab : int
-        grille
 
     Returns
     -------
     bool
     """
-    if tab[x][y] >= 4:
+    global grille
+    if grille[x][y] >= 4:
         return True
     return False
 
-def add_up(x, y, tab):
+def add_up(x, y):
     """
     Ajoute un grain de sable sur la case voisine du dessus.
 
@@ -66,17 +73,16 @@ def add_up(x, y, tab):
         ligne
     y : int
         colonne
-    tab : int
-        grille
 
     Returns
     -------
     None
     """
-    tab[x-1][y]+=1
+    global grille
+    grille[x-1][y]+=1
     
 
-def add_down(x, y, tab):
+def add_down(x, y):
     """
     Ajoute un grain de sable sur la case voisine du dessous.
 
@@ -86,16 +92,15 @@ def add_down(x, y, tab):
         ligne
     y : int
         colonne
-    tab : int
-        grille
 
     Returns
     -------
     None
     """
-    tab[x+1][y]+=1
+    global grille
+    grille[x+1][y]+=1
 
-def add_left(x, y, tab):
+def add_left(x, y):
     """
     Ajoute un grain de sable sur la case voisine de gauche.
 
@@ -105,16 +110,15 @@ def add_left(x, y, tab):
         ligne
     y : int
         colonne
-    tab : int
-        grille
 
     Returns
     -------
     None
     """
-    tab[x][y-1]+=1
+    global grille
+    grille[x][y-1]+=1
 
-def add_right(x, y, tab):
+def add_right(x, y):
     """
     Ajoute un grain de sable sur la case voisine de droite.
 
@@ -124,16 +128,15 @@ def add_right(x, y, tab):
         ligne
     y : int
         colonne
-    tab : int
-        grille
 
     Returns
     -------
     None
     """
-    tab[x][y+1]+=1
+    global grille
+    grille[x][y+1]+=1
 
-def avalanche(x, y, tab):
+def avalanche(x, y):
     """
     Enclenchera l'avalanche si la case x,y est instable.
 
@@ -143,25 +146,23 @@ def avalanche(x, y, tab):
         ligne
     y : int
         colonne
-    tab : int
-        grille
 
     Returns
     -------
     None
     """
-    add_up(x, y, tab)
-    add_down(x, y, tab)
-    add_left(x, y, tab)
-    add_right(x, y, tab)
+    global grille
+    add_up(x, y, grille)
+    add_down(x, y, grille)
+    add_left(x, y, grille)
+    add_right(x, y, grille)
 
 
 # programme principal contenant la définition des widgets et des événements qui leur sont liés et l’appel à la boucle de gestion des événements
 racine = tk.Tk() # Création de la fenêtre racine
 racine.title('tas de sable')
 
-                    #Bouton
-#Couleur
+                    
 Configuration = tk.Button(text="Configuration", 
                     height=1, width=15,
                     font=("Helvetica", "10"),
@@ -170,7 +171,7 @@ Configuration = tk.Button(text="Configuration",
 Configuration.grid(row=0, column=1, padx=200)
 
 
-                    #Fond noir 
+                    
 canvas = tk.Canvas(racine, bg="black", 
                    height=500, width=500)
 canvas.grid(row=1, column=1)
