@@ -79,10 +79,26 @@ def add(x, y):
     None
     """
     global grille
-    grille[x-1][y]+=1
-    grille[x+1][y]+=1
-    grille[x][y-1]+=1
-    grille[x][y+1]+=1
+    try:
+        grille[x-1][y]+=1
+    except:
+        pass
+
+    try:
+        grille[x+1][y]+=1
+    except:
+        pass
+
+    try:
+        grille[x][y-1]+=1
+    except:
+        pass
+
+    try:
+        grille[x][y+1]+=1
+    except:
+        pass
+    
 
 def avalanche(x, y):
     """
@@ -100,7 +116,7 @@ def avalanche(x, y):
     None
     """
     global grille
-    add(x, y, grille)
+    add(x, y)
     grille[x][y]-=4
 
 
