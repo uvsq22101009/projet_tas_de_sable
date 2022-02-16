@@ -32,6 +32,8 @@ def create_grille():
         for j in range (len(grille)):
             grille[i][j] = randint(0,7)
     print(grille)
+    
+    
 
 def empty_grille():
     """
@@ -125,6 +127,16 @@ def avalanche(x, y):
 racine = tk.Tk() 
 racine.title('tas de sable')
 
+#Explication des codes couleurs,
+#plus il y a de grains plus la couleur est agressive
+print("Association d'une couleur à une valeur d’une configuration :")
+print("1 grain = gris")
+print("2 grains = violet")
+print("3 grains = bleu")
+print("4 grains = vert")
+print("5 grains = jaune")
+print("6 grains = orange")
+print("7 grains = rouge")
                     
 Configuration = tk.Button(text="Configuration aléatoire", 
                     height=1, width=15,
