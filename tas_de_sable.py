@@ -16,6 +16,7 @@ from random import randint
 
 # définition des variables globales
 grille = [[0,0,0],[0,0,0],[0,0,0]]
+couleur = {1:"grey", 2:"purple", 3:"blue", 4:"green", 5:"yellow", 6:"orange", 7:"red"}
 
 
 # définition des fonctions (chaque fonction devra contenir une docstring)
