@@ -137,7 +137,11 @@ print("4 grains = vert")
 print("5 grains = jaune")
 print("6 grains = orange")
 print("7 grains = rouge")
-                    
+                                        
+canvas = tk.Canvas(racine, bg="black", 
+                   height=500, width=500)
+canvas.grid(row=1, column=1)
+
 Configuration = tk.Button(text="Configuration aléatoire", 
                     height=1, width=15,
                     font=("Helvetica", "10"),
@@ -145,11 +149,13 @@ Configuration = tk.Button(text="Configuration aléatoire",
                   )
 Configuration.grid(row=0, column=1, padx=200)
 
+#ligne horizontale
+canvas.create_line((0, 500/3), (500, 500/3), fill="gray5", width=5)
+canvas.create_line((0, 500/3*2), (500, 500/3*2), fill="gray5", width=5)
+#ligne verticale
+canvas.create_line((500/3, 0), (500/3, 500), fill="gray5", width=5)
+canvas.create_line((500/3*2, 0), (500/3*2, 500), fill="gray5", width=5)
 
-                    
-canvas = tk.Canvas(racine, bg="black", 
-                   height=500, width=500)
-canvas.grid(row=1, column=1)
 
 racine.mainloop() 
 
