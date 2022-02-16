@@ -12,7 +12,8 @@ import tkinter as tk
 from random import randint
 
 # définition des constantes (écrites en majuscule)
-
+LENGTH = 500
+HEIGHT = 500
 
 # définition des variables globales
 grille = [[0,0,0],[0,0,0],[0,0,0]]
@@ -22,7 +23,7 @@ couleur = {0:"white", 1:"grey", 2:"purple", 3:"blue", 4:"green", 5:"yellow", 6:"
 # définition des fonctions (chaque fonction devra contenir une docstring)
 def create_grille():
     """
-    Crée une grille aléatoire.
+    Crée une grille aléatoire et l'affiche.
 
     Returns
     -------
@@ -50,21 +51,21 @@ def color_case1():
     Affiche la couleur de la case 1
     """
     global grille
-    carre1 = canvas.create_rectangle(0,0,500/3,500/3, width=5, fill=couleur[grille[0][0]])
+    carre1 = canvas.create_rectangle(0,0,LENGTH/3,HEIGHT/3, width=5, fill=couleur[grille[0][0]])
     return carre1  
 def color_case2():
     """
     Affiche la couleur de la case 2
     """
     global grille
-    carre2 = canvas.create_rectangle(500/3,0,500/3*2,500/3, width=5, fill=couleur[grille[0][1]])
+    carre2 = canvas.create_rectangle(LENGTH/3,0,LENGTH/3*2,HEIGHT/3, width=5, fill=couleur[grille[0][1]])
     return carre2
 def color_case3():
     """
     Affiche la couleur de la case 3
     """
     global grille
-    carre3 = canvas.create_rectangle(500/3*2,0,500,500/3, width=5, fill=couleur[grille[0][2]])
+    carre3 = canvas.create_rectangle(LENGTH/3*2,0,LENGTH,HEIGHT/3, width=5, fill=couleur[grille[0][2]])
     return carre3
 
 
@@ -74,21 +75,21 @@ def color_case4():
     Affiche la couleur de la case 4
     """
     global grille
-    carre4 = canvas.create_rectangle(0,500/3,500/3,500/3*2, width=5, fill=couleur[grille[1][0]])
+    carre4 = canvas.create_rectangle(0,HEIGHT/3,LENGTH/3,HEIGHT/3*2, width=5, fill=couleur[grille[1][0]])
     return carre4
 def color_case5():
     """
     Affiche la couleur de la case 5
     """
     global grille
-    carre5 = canvas.create_rectangle(500/3,500/3,500/3*2,500/3*2, width=5, fill=couleur[grille[1][1]])
+    carre5 = canvas.create_rectangle(LENGTH/3,HEIGHT/3,LENGTH/3*2,HEIGHT/3*2, width=5, fill=couleur[grille[1][1]])
     return carre5
 def color_case6():
     """
     Affiche la couleur de la case 6
     """
     global grille
-    carre6 = canvas.create_rectangle(500/3*2,500/3,500,500/3*2, width=5, fill=couleur[grille[1][2]])
+    carre6 = canvas.create_rectangle(LENGTH/3*2,HEIGHT/3,LENGTH,HEIGHT/3*2, width=5, fill=couleur[grille[1][2]])
     return carre6
 
 
@@ -98,21 +99,21 @@ def color_case7():
     Affiche la couleur de la case 7
     """
     global grille
-    carre7 = canvas.create_rectangle(0,500/3*2,500/3,500, width=5, fill=couleur[grille[2][0]])
+    carre7 = canvas.create_rectangle(0,HEIGHT/3*2,LENGTH/3,HEIGHT, width=5, fill=couleur[grille[2][0]])
     return carre7
 def color_case8():
     """
     Affiche la couleur de la case 8
     """
     global grille
-    carre8 = canvas.create_rectangle(500/3,500/3*2,500/3*2,500, width=5, fill=couleur[grille[2][1]])
+    carre8 = canvas.create_rectangle(LENGTH/3,HEIGHT/3*2,LENGTH/3*2,HEIGHT, width=5, fill=couleur[grille[2][1]])
     return carre8
 def color_case9():
     """
     Affiche la couleur de la case 9
     """
     global grille
-    carre9 = canvas.create_rectangle(500/3*2,500/3*2,500,500, width=5, fill=couleur[grille[2][2]])
+    carre9 = canvas.create_rectangle(LENGTH/3*2,HEIGHT/3*2,LENGTH,HEIGHT, width=5, fill=couleur[grille[2][2]])
     return carre9
     
 
