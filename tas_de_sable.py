@@ -32,7 +32,7 @@ def create_grille():
     for i in range (len(grille)):
         for j in range (len(grille)):
             grille[i][j] = randint(0,7)
-    print(grille)
+    #print(grille)
     color_case1()
     color_case2()
     color_case3()
