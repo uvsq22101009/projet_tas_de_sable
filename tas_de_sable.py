@@ -46,14 +46,23 @@ def create_grille():
 
 #Ligne 1
 def color_case1():
+    """
+    Affiche la couleur de la case 1
+    """
     global grille
     carre1 = canvas.create_rectangle(0,0,500/3,500/3, width=5, fill=couleur[grille[0][0]])
     return carre1  
 def color_case2():
+    """
+    Affiche la couleur de la case 2
+    """
     global grille
     carre2 = canvas.create_rectangle(500/3,0,500/3*2,500/3, width=5, fill=couleur[grille[0][1]])
     return carre2
 def color_case3():
+    """
+    Affiche la couleur de la case 3
+    """
     global grille
     carre3 = canvas.create_rectangle(500/3*2,0,500,500/3, width=5, fill=couleur[grille[0][2]])
     return carre3
@@ -61,14 +70,23 @@ def color_case3():
 
 #Ligne 2
 def color_case4():
+    """
+    Affiche la couleur de la case 4
+    """
     global grille
     carre4 = canvas.create_rectangle(0,500/3,500/3,500/3*2, width=5, fill=couleur[grille[1][0]])
     return carre4
 def color_case5():
+    """
+    Affiche la couleur de la case 5
+    """
     global grille
     carre5 = canvas.create_rectangle(500/3,500/3,500/3*2,500/3*2, width=5, fill=couleur[grille[1][1]])
     return carre5
 def color_case6():
+    """
+    Affiche la couleur de la case 6
+    """
     global grille
     carre6 = canvas.create_rectangle(500/3*2,500/3,500,500/3*2, width=5, fill=couleur[grille[1][2]])
     return carre6
@@ -76,14 +94,23 @@ def color_case6():
 
 #Ligne 3
 def color_case7():
+    """
+    Affiche la couleur de la case 7
+    """
     global grille
     carre7 = canvas.create_rectangle(0,500/3*2,500/3,500, width=5, fill=couleur[grille[2][0]])
     return carre7
 def color_case8():
+    """
+    Affiche la couleur de la case 8
+    """
     global grille
     carre8 = canvas.create_rectangle(500/3,500/3*2,500/3*2,500, width=5, fill=couleur[grille[2][1]])
     return carre8
 def color_case9():
+    """
+    Affiche la couleur de la case 9
+    """
     global grille
     carre9 = canvas.create_rectangle(500/3*2,500/3*2,500,500, width=5, fill=couleur[grille[2][2]])
     return carre9
