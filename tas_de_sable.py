@@ -118,6 +118,15 @@ def empty_grille():
     """
     global grille
     grille = [[0,0,0],[0,0,0],[0,0,0]]
+    color_case1()
+    color_case2()
+    color_case3()
+    color_case4()
+    color_case5()
+    color_case6()
+    color_case7()
+    color_case8()
+    color_case9()
     
 def instable(x, y):
     """
@@ -214,14 +223,21 @@ print("7 grains = rouge")
                                         
 canvas = tk.Canvas(racine, bg="black", 
                    height=500, width=500)
-canvas.grid(row=1, column=1)
+canvas.grid(row=1, column=1, columnspan=2)
 
 Configuration = tk.Button(text="Configuration aléatoire", 
                     height=1, width=15,
                     font=("Helvetica", "10"),
                     command=create_grille
                   )
-Configuration.grid(row=0, column=1, padx=200)
+Configuration.grid(row=0, column=1)
+
+Vide = tk.Button(text="Configuration vide", 
+                    height=1, width=15,
+                    font=("Helvetica", "10"),
+                    command=empty_grille
+                  )
+Vide.grid(row=0, column=2)
 
 #ligne horizontale
 canvas.create_line((0, 500/3), (500, 500/3), fill="gray5", width=5)
@@ -233,4 +249,4 @@ canvas.create_line((500/3*2, 0), (500/3*2, 500), fill="gray5", width=5)
 
 racine.mainloop() 
 
-print(grille)
+#print(grille)
