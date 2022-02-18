@@ -104,7 +104,7 @@ def config_prec():
     """
     global grille
     global liste_config
-    fgrille=liste_config[-1]
+    grille=liste_config[-1]
     color_case1()
     color_case2()
     color_case3()
