@@ -202,27 +202,27 @@ canvas = tk.Canvas(racine, bg="black",
 canvas.grid(row=1, column=1, columnspan=4)
 
 Configuration_alea = tk.Button(text="Configuration aléatoire", 
-                    height=1, width=15,
+                    height=1, width=17,
                     font=("Helvetica", "10"),
                     command=random_grille
                   )
 Configuration_alea.grid(row=0, column=1)
 
 Vide = tk.Button(text="Configuration vide", 
-                    height=1, width=15,
+                    height=1, width=13,
                     font=("Helvetica", "10"),
                     command=empty_grille
                   )
 Vide.grid(row=0, column=2)
 
-Configuration_choisie = tk.Button(text="Configuration vide", 
+Configuration_choisie = tk.Button(text="Configuration choisie", 
                     height=1, width=15,
                     font=("Helvetica", "10")
                   )
 Configuration_choisie.grid(row=0, column=3)
 
-Configuration_precedente = tk.Button(text="Configuration vide", 
-                    height=1, width=15,
+Configuration_precedente = tk.Button(text="Configuration précédente", 
+                    height=1, width=18,
                     font=("Helvetica", "10")
                   )
 Configuration_precedente.grid(row=0, column=4)
