@@ -18,18 +18,19 @@ HEIGHT = 500
 # définition des variables globales
 grille = [[0,0,0],[0,0,0],[0,0,0]]
 couleur = {0:"white", 1:"grey", 2:"purple", 3:"blue", 4:"green", 5:"yellow", 6:"orange", 7:"red"}
-
+liste_config = []
 
 # définition des fonctions (chaque fonction devra contenir une docstring)
-def create_grille():
+def random_grille():
     """
     Crée une grille aléatoire et l'affiche.
 
     Returns
     -------
-    list
+    None
     """
     global grille
+    global liste_config
     for i in range (len(grille)):
         for j in range (len(grille)):
             grille[i][j] = randint(0,7)
@@ -43,6 +44,30 @@ def create_grille():
     color_case7()
     color_case8()
     color_case9()
+    liste_config.append(grille)
+
+
+def empty_grille():
+    """
+    Crée une grille vide.
+
+    Returns
+    -------
+    None
+    """
+    global grille
+    global liste_config
+    grille = [[0,0,0],[0,0,0],[0,0,0]]
+    color_case1()
+    color_case2()
+    color_case3()
+    color_case4()
+    color_case5()
+    color_case6()
+    color_case7()
+    color_case8()
+    color_case9()
+    liste_config.append(grille)
 
 
 #Ligne 1
@@ -65,7 +90,6 @@ def color_case3():
     carre3 = canvas.create_rectangle(LENGTH/3*2,0,LENGTH,HEIGHT/3, width=5, fill=couleur[grille[0][2]])
     return carre3
 
-
 #Ligne 2
 def color_case4():
     """
@@ -85,7 +109,6 @@ def color_case6():
     """
     carre6 = canvas.create_rectangle(LENGTH/3*2,HEIGHT/3,LENGTH,HEIGHT/3*2, width=5, fill=couleur[grille[1][2]])
     return carre6
-
 
 #Ligne 3
 def color_case7():
@@ -107,27 +130,8 @@ def color_case9():
     carre9 = canvas.create_rectangle(LENGTH/3*2,HEIGHT/3*2,LENGTH,HEIGHT, width=5, fill=couleur[grille[2][2]])
     return carre9
     
-
-def empty_grille():
-    """
-    Crée une grille vide.
-
-    Returns
-    -------
-    None
-    """
-    global grille
-    grille = [[0,0,0],[0,0,0],[0,0,0]]
-    color_case1()
-    color_case2()
-    color_case3()
-    color_case4()
-    color_case5()
-    color_case6()
-    color_case7()
-    color_case8()
-    color_case9()
     
+
 def instable(x, y):
     """
     Regarde si la case x, y est instable ou non.
@@ -143,7 +147,6 @@ def instable(x, y):
     -------
     bool
     """
-    global grille
     if grille[x][y] >= 4:
         return True
     return False
@@ -223,14 +226,14 @@ print("7 grains = rouge")
                                         
 canvas = tk.Canvas(racine, bg="black", 
                    height=500, width=500)
-canvas.grid(row=1, column=1, columnspan=2)
+canvas.grid(row=1, column=1, columnspan=3)
 
-Configuration = tk.Button(text="Configuration aléatoire", 
+Configuration_alea = tk.Button(text="Configuration aléatoire", 
                     height=1, width=15,
                     font=("Helvetica", "10"),
-                    command=create_grille
+                    command=random_grille
                   )
-Configuration.grid(row=0, column=1)
+Configuration_alea.grid(row=0, column=1)
 
 Vide = tk.Button(text="Configuration vide", 
                     height=1, width=15,
@@ -238,6 +241,7 @@ Vide = tk.Button(text="Configuration vide",
                     command=empty_grille
                   )
 Vide.grid(row=0, column=2)
+
 
 #ligne horizontale
 canvas.create_line((0, 500/3), (500, 500/3), fill="gray5", width=5)
