@@ -35,15 +35,7 @@ def random_grille():
         for j in range (len(grille)):
             grille[i][j] = randint(0,7)
     #print(grille)
-    color_case1()
-    color_case2()
-    color_case3()
-    color_case4()
-    color_case5()
-    color_case6()
-    color_case7()
-    color_case8()
-    color_case9()
+    color()
     liste_config.append(grille)
 
 
@@ -58,15 +50,7 @@ def empty_grille():
     global grille
     global liste_config
     grille = [[0,0,0],[0,0,0],[0,0,0]]
-    color_case1()
-    color_case2()
-    color_case3()
-    color_case4()
-    color_case5()
-    color_case6()
-    color_case7()
-    color_case8()
-    color_case9()
+    color()
     liste_config.append(grille)
 
 def config_choisie():
@@ -83,15 +67,7 @@ def config_choisie():
         for j in range(len(grille)):
             nombre=int(input("Chiffre : "))
             grille[i][j]=nombre
-    color_case1()
-    color_case2()
-    color_case3()
-    color_case4()
-    color_case5()
-    color_case6()
-    color_case7()
-    color_case8()
-    color_case9()
+    color()
     liste_config.append(grille)
 
 def config_prec():
@@ -105,76 +81,24 @@ def config_prec():
     global grille
     global liste_config
     grille=liste_config[-1]
-    color_case1()
-    color_case2()
-    color_case3()
-    color_case4()
-    color_case5()
-    color_case6()
-    color_case7()
-    color_case8()
-    color_case9()
+    color()
     liste_config.append(grille)
 
 #Ligne 1
-def color_case1():
+def color():
     """
-    Affiche la couleur de la case 1
+    Affiche la couleur de toutes les cases
     """
     carre1 = canvas.create_rectangle(0,0,LENGTH/3,HEIGHT/3, width=5, fill=couleur[grille[0][0]])
-    return carre1  
-def color_case2():
-    """
-    Affiche la couleur de la case 2
-    """
     carre2 = canvas.create_rectangle(LENGTH/3,0,LENGTH/3*2,HEIGHT/3, width=5, fill=couleur[grille[0][1]])
-    return carre2
-def color_case3():
-    """
-    Affiche la couleur de la case 3
-    """
     carre3 = canvas.create_rectangle(LENGTH/3*2,0,LENGTH,HEIGHT/3, width=5, fill=couleur[grille[0][2]])
-    return carre3
-
-#Ligne 2
-def color_case4():
-    """
-    Affiche la couleur de la case 4
-    """
     carre4 = canvas.create_rectangle(0,HEIGHT/3,LENGTH/3,HEIGHT/3*2, width=5, fill=couleur[grille[1][0]])
-    return carre4
-def color_case5():
-    """
-    Affiche la couleur de la case 5
-    """
     carre5 = canvas.create_rectangle(LENGTH/3,HEIGHT/3,LENGTH/3*2,HEIGHT/3*2, width=5, fill=couleur[grille[1][1]])
-    return carre5
-def color_case6():
-    """
-    Affiche la couleur de la case 6
-    """
     carre6 = canvas.create_rectangle(LENGTH/3*2,HEIGHT/3,LENGTH,HEIGHT/3*2, width=5, fill=couleur[grille[1][2]])
-    return carre6
-
-#Ligne 3
-def color_case7():
-    """
-    Affiche la couleur de la case 7
-    """
     carre7 = canvas.create_rectangle(0,HEIGHT/3*2,LENGTH/3,HEIGHT, width=5, fill=couleur[grille[2][0]])
-    return carre7
-def color_case8():
-    """
-    Affiche la couleur de la case 8
-    """
     carre8 = canvas.create_rectangle(LENGTH/3,HEIGHT/3*2,LENGTH/3*2,HEIGHT, width=5, fill=couleur[grille[2][1]])
-    return carre8
-def color_case9():
-    """
-    Affiche la couleur de la case 9
-    """
     carre9 = canvas.create_rectangle(LENGTH/3*2,HEIGHT/3*2,LENGTH,HEIGHT, width=5, fill=couleur[grille[2][2]])
-    return carre9
+    return carre1,carre2,carre3,carre4,carre5,carre6,carre7,carre8,carre9
     
     
 
