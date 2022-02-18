@@ -69,6 +69,52 @@ def empty_grille():
     color_case9()
     liste_config.append(grille)
 
+def config_choisie():
+    """
+    Crée une grille choisie par l'utilisateur.
+
+    Returns
+    -------
+    None
+    """
+    global grille
+    global liste_config
+    for i in range(len(grille)):
+        for j in range(len(grille)):
+            nombre=int(input("Chiffre : "))
+            grille[i][j]=nombre
+    color_case1()
+    color_case2()
+    color_case3()
+    color_case4()
+    color_case5()
+    color_case6()
+    color_case7()
+    color_case8()
+    color_case9()
+    liste_config.append(grille)
+
+def config_prec():
+    """
+    Prend la grille précédente.
+
+    Returns
+    -------
+    None
+    """
+    global grille
+    global liste_config
+    fgrille=liste_config[-1]
+    color_case1()
+    color_case2()
+    color_case3()
+    color_case4()
+    color_case5()
+    color_case6()
+    color_case7()
+    color_case8()
+    color_case9()
+    liste_config.append(grille)
 
 #Ligne 1
 def color_case1():
@@ -226,7 +272,7 @@ print("7 grains = rouge")
                                         
 canvas = tk.Canvas(racine, bg="black", 
                    height=500, width=500)
-canvas.grid(row=1, column=1, columnspan=3)
+canvas.grid(row=1, column=1, columnspan=4)
 
 Configuration_alea = tk.Button(text="Configuration aléatoire", 
                     height=1, width=15,
@@ -241,6 +287,18 @@ Vide = tk.Button(text="Configuration vide",
                     command=empty_grille
                   )
 Vide.grid(row=0, column=2)
+
+Configuration_choisie = tk.Button(text="Configuration vide", 
+                    height=1, width=15,
+                    font=("Helvetica", "10")
+                  )
+Configuration_choisie.grid(row=0, column=3)
+
+Configuration_precedente = tk.Button(text="Configuration vide", 
+                    height=1, width=15,
+                    font=("Helvetica", "10")
+                  )
+Configuration_precedente.grid(row=0, column=4)
 
 
 #ligne horizontale
