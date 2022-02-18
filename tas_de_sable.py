@@ -18,7 +18,7 @@ HEIGHT = 500
 # définition des variables globales
 grille = [[0,0,0],[0,0,0],[0,0,0]]
 couleur = {0:"white", 1:"grey", 2:"purple", 3:"blue", 4:"green", 5:"yellow", 6:"orange", 7:"red"}
-liste_config = []
+liste_config = [[[0,0,0],[0,0,0],[0,0,0]]] #cette variable commencera aussi par la grille vide
 
 # définition des fonctions (chaque fonction devra contenir une docstring)
 def random_grille():
@@ -174,8 +174,11 @@ def avalanche(x, y):
     None
     """
     global grille
-    add(x, y)
-    grille[x][y]-=4
+    if instable(x,y)==True:
+        add(x, y)
+        grille[x][y]-=4
+    else:
+        pass
 
 
 # programme principal contenant la définition des widgets et des événements qui leur sont liés et l’appel à la boucle de gestion des événements
