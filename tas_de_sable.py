@@ -237,5 +237,3 @@ canvas.create_line((500/3*2, 0), (500/3*2, 500), fill="gray5", width=5)
 
 
 racine.mainloop() 
-
-#print(grille)
